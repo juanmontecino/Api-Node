@@ -6,7 +6,7 @@ class Server {
     this.app = express()
     this.port = process.env.PORT || 3000
     this.middleware()
-    this.rutas() // Uncomment this line
+    this.rutas()
   }
 
   middleware () {
@@ -15,6 +15,7 @@ class Server {
 
   rutas () {
     this.app.use('/api/v1/empleados', require('../routes/empleados')) // ejemplo
+    this.app.use('/api/v1/noticias', require('../routes/noticias')) // Montecino
   }
 
   listen () {
