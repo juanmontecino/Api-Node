@@ -14,7 +14,6 @@ class Server {
   }
 
   rutas () {
-    this.app.use('/api/v1/empleados', require('../routes/empleados')) // ejemplo
     this.app.use('/api/v1/noticias', require('../routes/noticias')) // Montecino
   }
 
