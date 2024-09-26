@@ -1,9 +1,9 @@
-Endpoints
+# Endpoints
 Todos los endpoints deben usar el prefijo /api/v1/
 
-Noticias
+## Noticias
 
-URL:/noticias
+### URL:/noticias
 Devuelve hasta 50 noticias sobre Argentina
 Este endpoint  filtradas por un rango de fechas.
 
@@ -17,26 +17,29 @@ Ejemplo de Request:
 
  Obtener Noticias por Cantidad
 ACLARACION: la consigna pide que se muestre un registro especifico por paramero, pero como las noticias no tienen id, por parametro se pasan la cantidad de noticias que se quieren ver
+
 Este endpoint devuelve una cantidad específica de noticias sobre Argentina.
 
-URL:/noticias/:cantidad
 
 Parámetros de Ruta:
 cantidad: El número de noticias que se desean obtener.
+
+### URL:/noticias/:cantidad
+
 Ejemplo de Request:
 
-GET /api/noticias/10
+/noticias/10
 
-Canciones
-URL:/canciones
+## Canciones
+### URL:/canciones
 este endpoint devuelve 50 canciones mas conocidas del genero rock por defecto
 
-Query Parameters:
+### Query Parameters:
 genero: selecciona el genero deseado para ver las canciones mas conocidas de ese genero especifico.
 ejemplo de request: 
 /canciones?genero=pop
 
-Canciones por cantidad
+### Canciones por cantidad
 este endpoint devuelve la cantidad de canciones que prefieras del genero prestablecido "RKT"
 ejemplo:
 /canciones/10
