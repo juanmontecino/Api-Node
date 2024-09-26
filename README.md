@@ -44,9 +44,9 @@ este endpoint devuelve la cantidad de canciones que prefieras del genero prestab
 ejemplo:
 /canciones/10
 
-##Libros
-##Obtener Libros por Tema
-###URL: /libros
+## Libros
+## Obtener libros por tema
+## URL:/libros
 Método: GET
 Parámetros de Consulta:
 tema (opcional): El tema de los libros a buscar. Por defecto es 'ficcion'.
