@@ -6,5 +6,4 @@ const rutas = Router()
 rutas.get('/', getNoticias)
 rutas.get('/:cantidad', getNoticia)
 
-
 module.exports = rutas
