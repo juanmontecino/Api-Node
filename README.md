@@ -1,20 +1,20 @@
-# API Endpoints Documentation
+# Documentación de Endpoints de la API
 
-All endpoints must use the prefix `/api/v1/`.
+Todos los endpoints deben usar el prefijo `/api/v1/`.
 
 ## Noticias
 
 ### 1. Obtener Noticias Filtradas por Fecha
 
 **URL:** `/api/v1/noticias`  
-**Method:** `GET`  
-**Description:** Returns up to 50 news articles related to Argentina, filtered by a date range.
+**Método:** `GET`  
+**Descripción:** Devuelve hasta 50 noticias sobre Argentina, filtradas por un rango de fechas.
 
-**Query Parameters:**
-- `desde` *(optional)*: Start date in the format `YYYY-MM-DD`.
-- `hasta` *(optional)*: End date in the format `YYYY-MM-DD`.
+**Parámetros de Consulta:**
+- `desde` *(opcional)*: Fecha de inicio en el formato `YYYY-MM-DD`.
+- `hasta` *(opcional)*: Fecha de fin en el formato `YYYY-MM-DD`.
 
-**Example Request:**
+**Ejemplo de Solicitud:**
 ```bash
 GET /api/v1/noticias?desde=2024-01-01&hasta=2024-09-01
 ```
@@ -24,13 +24,13 @@ GET /api/v1/noticias?desde=2024-01-01&hasta=2024-09-01
 ### 2. Obtener Noticias por Cantidad
 
 **URL:** `/api/v1/noticias/:cantidad`  
-**Method:** `GET`  
-**Description:** Returns a specific number of news articles about Argentina.
+**Método:** `GET`  
+**Descripción:** Devuelve una cantidad específica de noticias sobre Argentina.
 
-**Path Parameters:**
-- `cantidad`: The number of news articles to return.
+**Parámetros de Ruta:**
+- `cantidad`: El número de noticias que se desean obtener.
 
-**Example Request:**
+**Ejemplo de Solicitud:**
 ```bash
 GET /api/v1/noticias/10
 ```
@@ -42,13 +42,13 @@ GET /api/v1/noticias/10
 ### 1. Obtener Canciones por Género
 
 **URL:** `/api/v1/canciones`  
-**Method:** `GET`  
-**Description:** Returns 50 of the most popular songs, by default of the rock genre.
+**Método:** `GET`  
+**Descripción:** Devuelve 50 de las canciones más populares, por defecto del género rock.
 
-**Query Parameters:**
-- `genero` *(optional)*: Specifies the genre of the songs. Defaults to rock.
+**Parámetros de Consulta:**
+- `genero` *(opcional)*: Especifica el género de las canciones. Por defecto es rock.
 
-**Example Request:**
+**Ejemplo de Solicitud:**
 ```bash
 GET /api/v1/canciones?genero=pop
 ```
@@ -58,13 +58,13 @@ GET /api/v1/canciones?genero=pop
 ### 2. Obtener Canciones por Cantidad
 
 **URL:** `/api/v1/canciones/:cantidad`  
-**Method:** `GET`  
-**Description:** Returns a specified number of songs from the preset genre "RKT".
+**Método:** `GET`  
+**Descripción:** Devuelve una cantidad específica de canciones del género preestablecido "RKT".
 
-**Path Parameters:**
-- `cantidad`: The number of songs to return.
+**Parámetros de Ruta:**
+- `cantidad`: La cantidad de canciones que se desean obtener.
 
-**Example Request:**
+**Ejemplo de Solicitud:**
 ```bash
 GET /api/v1/canciones/10
 ```
@@ -76,13 +76,13 @@ GET /api/v1/canciones/10
 ### 1. Obtener Libros por Tema
 
 **URL:** `/api/v1/libros`  
-**Method:** `GET`  
-**Description:** Returns up to 40 of the most relevant books based on the specified theme. Defaults to "fiction."
+**Método:** `GET`  
+**Descripción:** Devuelve hasta 40 libros más relevantes basados en el tema especificado. Por defecto, el tema es "ficción".
 
-**Query Parameters:**
-- `tema` *(optional)*: The theme of the books. Defaults to 'ficcion' (fiction).
+**Parámetros de Consulta:**
+- `tema` *(opcional)*: El tema de los libros. Por defecto es 'ficcion' (ficción).
 
-**Example Request:**
+**Ejemplo de Solicitud:**
 ```bash
 GET /api/v1/libros?tema=ciencia
 ```
@@ -92,21 +92,20 @@ GET /api/v1/libros?tema=ciencia
 ### 2. Obtener Libros de Ciencia Ficción por Cantidad
 
 **URL:** `/api/v1/libros/:cantidad`  
-**Method:** `GET`  
-**Description:** Returns the specified number of relevant books from the science fiction genre. Defaults to 10.
+**Método:** `GET`  
+**Descripción:** Devuelve el número especificado de libros relevantes del género de ciencia ficción. Por defecto es 10.
 
-**Path Parameters:**
-- `cantidad`: The number of books to return.
+**Parámetros de Ruta:**
+- `cantidad`: La cantidad de libros que se desean obtener.
 
-**Example Request:**
+**Ejemplo de Solicitud:**
 ```bash
 GET /api/v1/libros/15
 ```
 
---- 
+---
 
-Each endpoint follows the structure `/api/v1/`, ensuring a consistent naming convention for all requests in version 1 of the API.
-
+Cada endpoint sigue la estructura `/api/v1/`, asegurando una convención de nombres consistente para todas las solicitudes en la versión 1 de la API.
 ## Pokémon API
 
 ## Endpoints
