@@ -1,61 +1,108 @@
-# Endpoints
-Todos los endpoints deben usar el prefijo /api/v1/
+# API Endpoints Documentation
+
+All endpoints must use the prefix `/api/v1/`.
 
 ## Noticias
 
-### URL:/noticias
-Devuelve hasta 50 noticias sobre Argentina
-Este endpoint  filtradas por un rango de fechas.
+### 1. Obtener Noticias Filtradas por Fecha
 
-Query Parameters:
-desde (opcional): Fecha de inicio en formato YYYY-MM-DD.
-hasta (opcional): Fecha de fin en formato YYYY-MM-DD.
+**URL:** `/api/v1/noticias`  
+**Method:** `GET`  
+**Description:** Returns up to 50 news articles related to Argentina, filtered by a date range.
 
-Devuelve hasta 50 noticias sobre Argentina filtradas por un rango de fechas.
-Ejemplo de Request:
-/noticias?desde=2024-01-01&hasta=2024-09-01
+**Query Parameters:**
+- `desde` *(optional)*: Start date in the format `YYYY-MM-DD`.
+- `hasta` *(optional)*: End date in the format `YYYY-MM-DD`.
 
- Obtener Noticias por Cantidad
-ACLARACION: la consigna pide que se muestre un registro especifico por paramero, pero como las noticias no tienen id, por parametro se pasan la cantidad de noticias que se quieren ver
+**Example Request:**
+```bash
+GET /api/v1/noticias?desde=2024-01-01&hasta=2024-09-01
+```
 
-Este endpoint devuelve una cantidad específica de noticias sobre Argentina.
+---
 
+### 2. Obtener Noticias por Cantidad
 
-Parámetros de Ruta:
-cantidad: El número de noticias que se desean obtener.
+**URL:** `/api/v1/noticias/:cantidad`  
+**Method:** `GET`  
+**Description:** Returns a specific number of news articles about Argentina.
 
-### URL:/noticias/:cantidad
+**Path Parameters:**
+- `cantidad`: The number of news articles to return.
 
-Ejemplo de Request:
+**Example Request:**
+```bash
+GET /api/v1/noticias/10
+```
 
-/noticias/10
+---
 
 ## Canciones
-### URL:/canciones
-este endpoint devuelve 50 canciones mas conocidas del genero rock por defecto
 
-### Query Parameters:
-genero: selecciona el genero deseado para ver las canciones mas conocidas de ese genero especifico.
-ejemplo de request: 
-/canciones?genero=pop
+### 1. Obtener Canciones por Género
 
-### Canciones por cantidad
-este endpoint devuelve la cantidad de canciones que prefieras del genero prestablecido "RKT"
-ejemplo:
-/canciones/10
+**URL:** `/api/v1/canciones`  
+**Method:** `GET`  
+**Description:** Returns 50 of the most popular songs, by default of the rock genre.
+
+**Query Parameters:**
+- `genero` *(optional)*: Specifies the genre of the songs. Defaults to rock.
+
+**Example Request:**
+```bash
+GET /api/v1/canciones?genero=pop
+```
+
+---
+
+### 2. Obtener Canciones por Cantidad
+
+**URL:** `/api/v1/canciones/:cantidad`  
+**Method:** `GET`  
+**Description:** Returns a specified number of songs from the preset genre "RKT".
+
+**Path Parameters:**
+- `cantidad`: The number of songs to return.
+
+**Example Request:**
+```bash
+GET /api/v1/canciones/10
+```
+
+---
 
 ## Libros
-## Obtener libros por tema
-## URL:/libros
-Método: GET
-## Parametros
-tema (opcional): El tema de los libros a buscar. Por defecto es 'ficcion'.
-Descripción: Devuelve hasta 40 libros más relevantes sobre el tema especificado.
-Ejemplo de Solicitud: /api/v1/libros?tema=ciencia
-## Obtener libros de Ciencia Ficcion
-## URL:/libros/cantidad
-Método: GET
-## Parametros
-cantidad: El número de libros a devolver. Por defecto es 10.
-Descripción: Devuelve el número especificado de libros más relevantes de ciencia ficción.
-Ejemplo de Solicitud: /api/v1/libros/15
+
+### 1. Obtener Libros por Tema
+
+**URL:** `/api/v1/libros`  
+**Method:** `GET`  
+**Description:** Returns up to 40 of the most relevant books based on the specified theme. Defaults to "fiction."
+
+**Query Parameters:**
+- `tema` *(optional)*: The theme of the books. Defaults to 'ficcion' (fiction).
+
+**Example Request:**
+```bash
+GET /api/v1/libros?tema=ciencia
+```
+
+---
+
+### 2. Obtener Libros de Ciencia Ficción por Cantidad
+
+**URL:** `/api/v1/libros/:cantidad`  
+**Method:** `GET`  
+**Description:** Returns the specified number of relevant books from the science fiction genre. Defaults to 10.
+
+**Path Parameters:**
+- `cantidad`: The number of books to return.
+
+**Example Request:**
+```bash
+GET /api/v1/libros/15
+```
+
+--- 
+
+Each endpoint follows the structure `/api/v1/`, ensuring a consistent naming convention for all requests in version 1 of the API.
