@@ -1,11 +1,15 @@
 # Documentación de Endpoints de la API
 
+## URL render
+```bash
+api-node-drh0.onrender.com
+```
 Todos los endpoints deben usar el prefijo `/api/v1/`.
 
 ## Noticias
 
 ### 1. Obtener Noticias Filtradas por Fecha
-
+### ACLARACION: La Api News devuelve un 403 (Forbidden) cuando se intenta acceder a ella mediante render, abajo de todo el error devuelve la url a la que intenta hacer peticion
 **URL:** `/api/v1/noticias`  
 **Método:** `GET`  
 **Descripción:** Devuelve hasta 50 noticias sobre Argentina, filtradas por un rango de fechas.
@@ -16,7 +20,7 @@ Todos los endpoints deben usar el prefijo `/api/v1/`.
 
 **Ejemplo de Solicitud:**
 ```bash
-GET /api/v1/noticias?desde=2024-01-01&hasta=2024-09-01
+api-node-drh0.onrender.com/api/v1/noticias?desde=2024-01-01&hasta=2024-09-01
 ```
 
 ---
@@ -32,7 +36,7 @@ GET /api/v1/noticias?desde=2024-01-01&hasta=2024-09-01
 
 **Ejemplo de Solicitud:**
 ```bash
-GET /api/v1/noticias/10
+api-node-drh0.onrender.com/api/v1/noticias/10
 ```
 
 ---
@@ -50,7 +54,7 @@ GET /api/v1/noticias/10
 
 **Ejemplo de Solicitud:**
 ```bash
-GET /api/v1/canciones?genero=pop
+api-node-drh0.onrender.com/api/v1/canciones?genero=pop
 ```
 
 ---
@@ -66,7 +70,7 @@ GET /api/v1/canciones?genero=pop
 
 **Ejemplo de Solicitud:**
 ```bash
-GET /api/v1/canciones/10
+api-node-drh0.onrender.com/api/v1/canciones/10
 ```
 
 ---
@@ -84,7 +88,7 @@ GET /api/v1/canciones/10
 
 **Ejemplo de Solicitud:**
 ```bash
-GET /api/v1/libros?tema=ciencia
+api-node-drh0.onrender.com/api/v1/libros?tema=ciencia
 ```
 
 ---
@@ -100,7 +104,7 @@ GET /api/v1/libros?tema=ciencia
 
 **Ejemplo de Solicitud:**
 ```bash
-GET /api/v1/libros/15
+api-node-drh0.onrender.com/api/v1/libros/15
 ```
 
 ---
@@ -120,7 +124,7 @@ Este endpoint devuelve información sobre un Pokémon específico.
 
 #### Ejemplo de Request:
 
-GET /api/v1/pokemons?name=charmander
+GET api-node-drh0.onrender.com/api/v1/pokemons?name=charmander
 
 #### Obtener lista de Pokémon
 URL: /pokemons
@@ -130,5 +134,5 @@ Este endpoint devuelve una lista paginada de Pokémon.
 cantidad (obligatorio): El número de Pokémon que se desean obtener.
 #### Ejemplo de Request:
 
-GET /api/v1/pokemons/10
+GET api-node-drh0.onrender.com/api/v1/pokemons/10
 
