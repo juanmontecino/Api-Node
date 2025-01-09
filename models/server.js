@@ -1,5 +1,6 @@
 const express = require('express')
 require('dotenv').config();
+const cors = require('cors')
 
 class Server {
   constructor () {
@@ -10,6 +11,7 @@ class Server {
   }
 
   middleware () {
+    this.app.use(cors())
     this.app.use(express.static('public'))
   }
 
