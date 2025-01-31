@@ -3,11 +3,11 @@ const { request, response } = require('express')
 
 const getLibros = (req = request, res = response) => {
   const { tema = 'ficcion', page = 1, lang = 'en' } = req.query
-  const maxResults = 50
+  const maxResults = 40
   const startIndex = (page - 1) * maxResults
 
   const apiKey = process.env.APIKEYLIBROS
-  const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=subject:${tema}&langRestrict=${lang}&startIndex=${startIndex}&maxResults=${maxResults}&key=${apiKey}`
+  const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${tema}&langRestrict=${lang}&startIndex=${startIndex}&maxResults=${maxResults}&key=${apiKey}`
 
   if (!apiKey) {
     return res.status(500).json({
@@ -42,7 +42,6 @@ const getLibros = (req = request, res = response) => {
       })
     })
 }
-
 // Obtener un libro por Id
 const getLibroPorId = (req = request, res = response) => {
   const { id } = req.params
