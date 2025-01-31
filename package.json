@@ -4,6 +4,7 @@
   "description": "Api con express node js",
   "main": "app.js",
   "scripts": {
+    "dev": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app",
     "lint": "npx standard",
