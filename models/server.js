@@ -1,15 +1,23 @@
 const express = require('express')
 require('dotenv').config()
+const cors = require('cors')
 
 class Server {
   constructor () {
     this.app = express()
     this.port = process.env.PORT || 3000
+
     this.middleware()
     this.rutas()
   }
 
   middleware () {
+    this.app.use(cors({
+      origin: '*',
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      allowedHeaders: ['Content-Type', 'Authorization']
+    }))
+    this.app.use(express.json())
     this.app.use(express.static('public'))
     // Esto permite parsear las peticiones con JSON
     this.app.use(express.json())

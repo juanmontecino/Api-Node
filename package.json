@@ -4,6 +4,7 @@
   "description": "Api con express node js",
   "main": "app.js",
   "scripts": {
+    "dev": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app",
     "lint": "npx standard",
@@ -23,12 +24,13 @@
   "dependencies": {
     "apinodeexpress": "file:",
     "axios": "^1.7.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.21.0",
-    "nodemon": "^3.1.5"
+    "express": "^4.21.0"
   },
   "devDependencies": {
     "husky": "^9.1.6",
+    "nodemon": "^3.1.9",
     "standard": "^17.1.2"
   },
   "eslintConfig": {
