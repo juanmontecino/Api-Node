@@ -2,7 +2,7 @@ const axios = require('axios')
 const { request, response } = require('express')
 
 const getNoticias = (req = request, res = response) => {
-  const { desde = '', hasta = '' } = req.query
+  const { tema = 'argentina', desde = '', hasta = '' } = req.query
 
   const apiKey = process.env.NEWS_API_KEY
   const desdeDate = desde ? `&from=${desde}` : ''
@@ -15,7 +15,7 @@ const getNoticias = (req = request, res = response) => {
   }
 
   try {
-    const apiUrl = `https://newsapi.org/v2/everything?q=argentina&pagesize=50${desdeDate}${hastaDate}&apiKey=${apiKey}`
+    const apiUrl = `https://newsapi.org/v2/everything?q=${tema}&pagesize=50${desdeDate}${hastaDate}&apiKey=${apiKey}`
     axios.get(apiUrl)
       .then((response) => {
         const { data } = response
